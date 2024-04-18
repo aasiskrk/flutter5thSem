@@ -1,19 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AddTwoNums extends StatefulWidget {
-  const AddTwoNums({super.key});
+class SimpleInterestScreen extends StatefulWidget {
+  const SimpleInterestScreen({super.key});
 
 
   @override
-  State<AddTwoNums> createState() => _AddTwoNumsState();
+  State<SimpleInterestScreen> createState() => _SimpleInterestScreenState();
 }
 
-class _AddTwoNumsState extends State<AddTwoNums> {
+class _SimpleInterestScreenState extends State<SimpleInterestScreen> {
 
-  int result = 0;
-  int? num1;
-  int? num2;
+  double result = 0;
+  double? principle;
+  double? rate;
+  double? time;
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +32,27 @@ class _AddTwoNumsState extends State<AddTwoNums> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextField(
-              onChanged: (value){
-                num1 = int.parse(value);
-              },
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Enter number 1', border: OutlineInputBorder())
+                onChanged: (value){
+                  principle = double.parse(value);
+                },
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'Enter principle', border: OutlineInputBorder())
             ),
             SizedBox(height: 10,),
             TextField(
               onChanged: (value){
-                num2 = int.parse(value);
+                rate= double.parse(value);
               },
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Enter number 2', border: OutlineInputBorder()),
+              decoration: InputDecoration(labelText: 'Enter rate', border: OutlineInputBorder()),
+            ),
+            SizedBox(height: 10,),
+            TextField(
+              onChanged: (value){
+                time = double.parse(value);
+              },
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(labelText: 'Enter time', border: OutlineInputBorder()),
             ),
             SizedBox(height: 20),
             SizedBox(
@@ -51,24 +60,14 @@ class _AddTwoNumsState extends State<AddTwoNums> {
               child: ElevatedButton(
                 onPressed: (){
                   setState(() {
-                    result = num1! + num2!;
+                    result = (principle! * rate! * time!)/100;
                   });
                 },
-                child: Text('Add', style: TextStyle(fontSize: 30),),
+                child: Text('Calculate', style: TextStyle(fontSize: 30),),
               ),
             ),
             SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: (){
-                  setState(() {
-                    result = num1! - num2!;
-                  });
-                },
-                child: Text('Sub', style: TextStyle(fontSize: 30),),
-              ),
-            ),
+
             SizedBox(height: 20),
             Text(
               'Result: $result',
