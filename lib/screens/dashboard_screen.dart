@@ -1,4 +1,5 @@
 import 'package:class_app/screens/add_two_numbers.dart';
+import 'package:class_app/screens/column_screen.dart';
 import 'package:class_app/screens/simple_interest_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       MaterialPageRoute(builder: (context) => const SimpleInterestScreen()),
                     );
                   }, child: Text("Simple interest"))),
+              SizedBox(width: double.infinity,
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ColumnScreen()),
+                    );
+                  }, child: Text("Column Screen"))),
             ],
           ),
         ),
