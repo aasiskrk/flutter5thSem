@@ -10,22 +10,24 @@ class ColumnScreen extends StatelessWidget {
         title: const Text('column'),
       ),
       body: Container(
-        color: Colors.yellow,
+        width: double.infinity,
+        // color: Colors.blue,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
-            Icon(
-              Icons.star,
-              size: 50,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: const Text('Button 1'),
             ),
-            Icon(
-              Icons.star,
-              size: 50,
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Button 2'),
             ),
-            Icon(
-              Icons.star,
-              size: 50,
-            )
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text('Button 3'),
+            ),
           ],
         ),
       ),

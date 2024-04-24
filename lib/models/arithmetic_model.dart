@@ -1,16 +1,25 @@
-class ArithmeticModel{
+class ArithmeticModel {
   final int first;
   final int second;
 
   ArithmeticModel({
     required this.first,
     required this.second,
-});
+  });
 
-  int add(){
+  int add() {
     return first + second;
   }
-  int sub(){
+
+  int sub() {
     return first - second;
+  }
+
+  int multiply() {
+    return first * second;
+  }
+
+  double divide() {
+    return first / second;
   }
 }
