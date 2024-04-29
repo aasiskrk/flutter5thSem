@@ -1,4 +1,4 @@
-import 'package:class_app/screens/class_ui_screen.dart';
+import 'package:class_app/screens/student_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -8,7 +8,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: classUiScreen(),
+      home: StudentDetailsScreen(),
     );
   }
 }
